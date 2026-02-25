@@ -125,11 +125,23 @@ Check endpoint names
 
 Verify JSON structure matches model
 
+## 📸 Screenshots
+
+### Onboarding Screen
+![Onboarding](assets/screenshot01.png)
+![Onboarding](assets/screenshot02.png)
+
+### Daily Challenge Screen
+![Challenge](assets/screenshot03.png)
+
+### History Screen
+![History](assets/screenshot04.png)
+
 ## 👨‍💻 Author
 ## Sujit Ptajaiati
 
 Built as part of internship task using Flutter + Clean Architecture.
 
-📄 License
+## 📄 License
 
 This project is for educational/internship purposes.
