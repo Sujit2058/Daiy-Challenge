@@ -128,14 +128,14 @@ Verify JSON structure matches model
 ## 📸 Screenshots
 
 ### Onboarding Screen
-![Onboarding](assets/screenshot01.png)
-![Onboarding](assets/screenshot02.png)
+![Onboarding](assets/screenshot01.jpg)
+![Onboarding](assets/screenshot02.jpg)
 
 ### Daily Challenge Screen
-![Challenge](assets/screenshot03.png)
+![Challenge](assets/screenshot03.jpg)
 
 ### History Screen
-![History](assets/screenshot04.png)
+![History](assets/screenshot04.jpg)
 
 ## 👨‍💻 Author
 ## Sujit Ptajaiati
