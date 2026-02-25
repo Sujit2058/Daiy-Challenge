@@ -1,0 +1,288 @@
+{
+  "uuid": "1e8a3713-bf8f-4311-8796-386f6b871875",
+  "lastMigration": 33,
+  "name": "Daily challange",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "192.168.1.134",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "de9ece31-8648-45e5-b933-4e06db1ac054",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "categories",
+      "responses": [
+        {
+          "uuid": "af88fa6a-04f5-44ec-a744-f62e1cd55d08",
+          "body": "{\r\n  \"categories\": [\r\n    { \"id\": 1, \"name\": \"Coding\", \"emoji\": \"💻\" },\r\n    { \"id\": 2, \"name\": \"Fitness\", \"emoji\": \"🏃\" },\r\n    { \"id\": 3, \"name\": \"Mindfulness\", \"emoji\": \"🧘\" },\r\n    { \"id\": 4, \"name\": \"Learning\", \"emoji\": \"📚\" }\r\n  ]\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "cf5d2d81-46c7-4cc9-9fd3-3427449b48c6",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "preferences",
+      "responses": [
+        {
+          "uuid": "f6502a59-d03f-40d3-9c85-0aa8ac2e5446",
+          "body": "{\r\n  \"success\": true,\r\n  \"user_id\": \"{{faker 'string.uuid'}}\",\r\n  \"selected_categories\": {{{body 'category_ids'}}},\r\n  \"message\": \"Preferences saved successfully.\"\r\n}\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "765a7892-09b2-4225-90e6-f18d856d4cfe",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "e96b0887-d5df-47ff-bb8b-d569f157b185",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "challenge/today",
+      "responses": [
+        {
+          "uuid": "94836688-302d-4572-acb5-ac76260bceb3",
+          "body": "{\r\n  \"id\": 101,\r\n  \"title\": \"Build a widget using BlocConsumer properly\",\r\n  \"category\": { \"id\": 1, \"name\": \"Coding\", \"emoji\": \"💻\" },\r\n  \"difficulty\": \"Medium\",\r\n  \"date\": \"{{date 'YYYY-MM-DD'}}\",\r\n  \"completed\": false\r\n}\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "a0fd5800-200e-44be-9aa5-832c9dd0aa88",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "challenge/complete",
+      "responses": [
+        {
+          "uuid": "621073d6-21b8-45f4-ac8b-30e3132732d1",
+          "body": "{\r\n  \"success\": true,\r\n  \"message\": \"Challenge marked as completed.\"\r\n}\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "23a8014c-fc83-4ec6-9a6b-06a512fbbb9d",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "challenge/history",
+      "responses": [
+        {
+          "uuid": "8111b3d5-b93e-4fb1-85ab-bf01cb3cf4e6",
+          "body": "{\r\n  \"history\": [\r\n    {\r\n      \"date\": \"2026-02-24\",\r\n      \"title\": \"Build UI without Google\",\r\n      \"category\": { \"id\": 1, \"name\": \"Coding\", \"emoji\": \"💻\" },\r\n      \"status\": \"completed\"\r\n    },\r\n    {\r\n      \"date\": \"2026-02-23\",\r\n      \"title\": \"30 min workout\",\r\n      \"category\": { \"id\": 2, \"name\": \"Fitness\", \"emoji\": \"🏃\" },\r\n      \"status\": \"completed\"\r\n    },\r\n    {\r\n      \"date\": \"2026-02-22\",\r\n      \"title\": \"No sugar today\",\r\n      \"category\": { \"id\": 3, \"name\": \"Mindfulness\", \"emoji\": \"🧘\" },\r\n      \"status\": \"skipped\"\r\n    }\r\n  ]\r\n}\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "61ba5838-8cb0-433f-af9e-f5e0ece5f2f6",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "streak",
+      "responses": [
+        {
+          "uuid": "b323d552-894b-4f2d-b2b1-8c1c2b76f74b",
+          "body": "{\r\n  \"count\": 3,\r\n  \"longest_streak\": 7\r\n}\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "de9ece31-8648-45e5-b933-4e06db1ac054"
+    },
+    {
+      "type": "route",
+      "uuid": "cf5d2d81-46c7-4cc9-9fd3-3427449b48c6"
+    },
+    {
+      "type": "route",
+      "uuid": "e96b0887-d5df-47ff-bb8b-d569f157b185"
+    },
+    {
+      "type": "route",
+      "uuid": "a0fd5800-200e-44be-9aa5-832c9dd0aa88"
+    },
+    {
+      "type": "route",
+      "uuid": "23a8014c-fc83-4ec6-9a6b-06a512fbbb9d"
+    },
+    {
+      "type": "route",
+      "uuid": "61ba5838-8cb0-433f-af9e-f5e0ece5f2f6"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "http://10.0.2.2/3001",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
