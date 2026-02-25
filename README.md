@@ -19,34 +19,8 @@ A Flutter application built using **Clean Architecture + BLoC** that provides us
 
 ## 🏗 Architecture
 
-The project follows **Clean Architecture** principles:
+The project follows **Clean Architecture** principles.
 
-
-lib/
-│
-├── core/
-│ ├── constants/
-│ ├── network/
-│ └── storage/
-│
-├── features/
-│ ├── onboarding/
-│ │ ├── data/
-│ │ ├── domain/
-│ │ └── presentation/
-│ │
-│ ├── challenge/
-│ │ ├── data/
-│ │ ├── domain/
-│ │ └── presentation/
-│ │
-│ └── history/
-│ ├── data/
-│ ├── domain/
-│ └── presentation/
-│
-├── injection_container.dart
-└── main.dart
 
 
 ### Architecture Layers
